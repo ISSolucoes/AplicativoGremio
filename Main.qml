@@ -2,44 +2,59 @@ import QtQuick
 import QtQuick.Controls.Material
 
 import "./Telas/splashScreen"
+import "./Telas/login"
+import "./Telas/principalEscola"
 
 Window {
-    id: root
-    width: 300
-    height: 500
-    visible: true
-    title: qsTr("Aplicativo Grêmio")
-    Material.accent: Material.Blue
+  id: root
+  width: 300
+  height: 500
+  visible: true
+  title: qsTr("Aplicativo Grêmio")
+  Material.accent: Material.Blue
 
-    Component {
-        id: telaSplashScreen
-        SplashScreen {
-            implicitWidth: root.width
-            implicitHeight: root.height
-        }
-    }
+  FontLoader {
+    id: carregadorDeFontesLocais
+    source: "./Fontes/DancingScript-VariableFont_wght.ttf"
+  }
 
-    Component {
-        id: telaAlternativa
-        Rectangle {
-            width: root.width
-            height: root.height
-            color: "yellow"
-        }
+  Component {
+    id: telaSplashScreen
+    SplashScreen {
+      implicitWidth: root.width
+      implicitHeight: root.height
     }
+  }
 
-    Timer {
-        interval: 5000; repeat: false; running: true; triggeredOnStart: false;
-        onTriggered: function() {
-            carregadorDeComponentes.sourceComponent = telaAlternativa;
-        }
+  Component {
+    id: telaLogin
+    Login {
+      implicitWidth: root.width
+      implicitHeight: root.height
     }
+  }
 
-    Loader {
-        id: carregadorDeComponentes
-        anchors.fill: parent
-        active: true
-        sourceComponent: telaSplashScreen
+  Component {
+    id: telaHomeScreenEscola
+    HomeScreenEscola {
+      width: root.width
+      height: root.height
     }
+  }
+
+  Timer {
+    interval: 2000; repeat: false; running: true; triggeredOnStart: false;
+    onTriggered: function() {
+      carregadorDeComponentes.sourceComponent = telaLogin;
+    }
+  }
+
+  Loader {
+    id: carregadorDeComponentes
+    antialiasing: true
+    anchors.fill: parent
+    active: true
+    sourceComponent: telaSplashScreen
+  }
 
 }
