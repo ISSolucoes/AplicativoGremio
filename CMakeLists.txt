@@ -29,6 +29,11 @@ qt_add_qml_module(appAplicativoGremio
     QML_FILES Logicas/Logicas.js
     RESOURCES Imagens/Icones/Visivel.svg Imagens/Icones/Invisivel.svg Imagens/Icones/home.svg Imagens/Icones/person.svg Imagens/Icones/chapa.svg Imagens/Icones/votos.svg Imagens/Icones/informacao.svg Imagens/Logo/VotaGremio.png
     RESOURCES Fontes/DancingScript-VariableFont_wght.ttf
+    QML_FILES Telas/principalAluno/HomeScreenAluno.qml
+    QML_FILES Telas/principalAluno/Inicio/InicioScreenAluno.qml
+    QML_FILES Telas/principalAluno/Chapas/ChapasScreenAluno.qml
+    QML_FILES Telas/principalAluno/Votos/VotosScreenAluno.qml
+    QML_FILES Telas/principalAluno/Sobre/SobreScreenAluno.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

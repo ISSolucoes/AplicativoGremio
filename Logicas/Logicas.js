@@ -16,6 +16,7 @@ function retornaVetorTurnosEscolares() {
   return vetorTurnosEscolares;
 }
 
-function entrar() {
-  carregadorDeComponentes.sourceComponent = telaHomeScreenEscola;
+function entrar(indiceComboBoxOpcao) {
+  if( indiceComboBoxOpcao === 0 ) carregadorDeComponentes.sourceComponent = telaHomeScreenEscola;
+  if( indiceComboBoxOpcao === 1 ) carregadorDeComponentes.sourceComponent = telaHomeScreenAluno;
 }

@@ -3,24 +3,20 @@ import QtQuick.Controls.Material
 import QtQuick.Layouts
 
 import "./Inicio"
-import "./Alunos"
 import "./Chapas"
 import "./Votos"
 import "./Sobre"
 
 ApplicationWindow {
-  id: homeScreen
+  id: homeScreen2
   visible: true
   Material.accent: Material.Blue
 
   footer: TabBar {
-    id: barraDeOpcoes
-    width: homeScreen.implicitWidth
+    id: barraOpcoesAluno
+    width: homeScreen2.implicitWidth
     TabButton {
       icon.source: "../../Imagens/Icones/home.svg"
-    }
-    TabButton {
-      icon.source: "../../Imagens/Icones/person.svg"
     }
     TabButton {
       icon.source: "../../Imagens/Icones/chapa.svg"
@@ -34,36 +30,33 @@ ApplicationWindow {
   }
 
   StackLayout {
-    id: stackLayoutHomeScreen
-    currentIndex: barraDeOpcoes.currentIndex
+    id: stackLayoutHomeScreen2
+    currentIndex: barraOpcoesAluno.currentIndex
     anchors.fill: parent
 
     Item {
-      Inicio {
+      InicioScreenAluno {
       }
       Layout.fillWidth: true
       Layout.fillHeight: true
     }
+
     Item {
-      Alunos {
+      ChapasScreenAluno {
       }
       Layout.fillWidth: true
       Layout.fillHeight: true
     }
+
     Item {
-      Chapas {
+      VotosScreenAluno {
       }
       Layout.fillWidth: true
       Layout.fillHeight: true
     }
+
     Item {
-      Votos {
-      }
-      Layout.fillWidth: true
-      Layout.fillHeight: true
-    }
-    Item {
-      Sobre {
+      SobreScreenAluno {
       }
       Layout.fillWidth: true
       Layout.fillHeight: true

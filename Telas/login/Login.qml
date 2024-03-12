@@ -26,7 +26,7 @@ Item {
       id: rectCamposLogin
       anchors.centerIn: parent
       implicitWidth: parent.width * (70/100)
-      implicitHeight: comboBoxOpcoesCadastro.height + textFieldEmail.height + linhaCampoSenha.height + btnEntrar.height + btnCadastrar.height + colunaRectCamposLogin.anchors.topMargin + colunaRectCamposLogin.anchors.bottomMargin
+      implicitHeight: comboBoxOpcoes.height + textFieldEmail.height + linhaCampoSenha.height + btnEntrar.height + btnCadastrar.height + colunaRectCamposLogin.anchors.topMargin + colunaRectCamposLogin.anchors.bottomMargin
       color: "white"
       radius: 10
 
@@ -39,7 +39,7 @@ Item {
         spacing: 5
 
         ComboBox {
-          id: comboBoxOpcoesCadastro
+          id: comboBoxOpcoes
           model: [`Escola`, `Aluno`]
           Layout.alignment: Qt.AlignCenter
           implicitWidth: parent.width * (85/100)
@@ -93,7 +93,7 @@ Item {
           Layout.rightMargin: 20
           onClicked: function() {
             console.log(`Entrando`);
-            Logicas.entrar();
+            Logicas.entrar(comboBoxOpcoes.currentIndex);
           }
         }
         Button {
@@ -104,8 +104,8 @@ Item {
           Layout.leftMargin: 20
           Layout.rightMargin: 20
           onClicked: function() {
-            if( comboBoxOpcoesCadastro.currentIndex === 0 ) popUpCadastroEscola.open();
-            if( comboBoxOpcoesCadastro.currentIndex === 1 ) popUpCadastroAluno.open();
+            if( comboBoxOpcoes.currentIndex === 0 ) popUpCadastroEscola.open();
+            if( comboBoxOpcoes.currentIndex === 1 ) popUpCadastroAluno.open();
           }
         }
 

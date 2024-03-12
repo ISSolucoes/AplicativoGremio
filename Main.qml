@@ -4,6 +4,7 @@ import QtQuick.Controls.Material
 import "./Telas/splashScreen"
 import "./Telas/login"
 import "./Telas/principalEscola"
+import "./Telas/principalAluno"
 
 Window {
   id: root
@@ -37,6 +38,14 @@ Window {
   Component {
     id: telaHomeScreenEscola
     HomeScreenEscola {
+      width: root.width
+      height: root.height
+    }
+  }
+
+  Component {
+    id: telaHomeScreenAluno
+    HomeScreenAluno {
       width: root.width
       height: root.height
     }
